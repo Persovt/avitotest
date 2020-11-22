@@ -1,5 +1,5 @@
-export const IMAGEURL = 'IMAGEURL'
-export const CARDTEXT = 'CARDTEXT'
-export const REDIRECTIMAGE = 'REDIRECTIMAGE'
-export const SETBGCOLOR = 'SETBGCOLOR'
-export const SETFONTCOLOR = 'SETFONTCOLOR'
+export const IMAGEURL = "IMAGEURL";
+export const CARDTEXT = "CARDTEXT";
+export const REDIRECTIMAGE = "REDIRECTIMAGE";
+export const SETBGCOLOR = "SETBGCOLOR";
+export const SETFONTCOLOR = "SETFONTCOLOR";

@@ -1,53 +1,36 @@
 import React from 'react'
-import { Card } from 'antd';
+import Draggable from 'react-draggable'
+import {propsType} from './App'
 
-interface dataProps {
-    errorImageURL: string,
-    errorRedirectURL: string,
-    cardText: string,
-    imageURL: string,
-    redirectURL: string,
-    Color: string,
-    setColor: (arg0: string) => void,
-    setImageURL: (arg0: string) => void,
-    setCardText: (arg0: string) => void,
-    setRedirectURL:  (arg0: string) => void
-}
 interface props {
     testInit: (atg: HTMLDivElement) => void,
-    data: dataProps
+    data: propsType
 
 }
 
 
 const banner = ({testInit, data}: props) => {
 
+   
 
-
-
+    
     return (
 
-        <div className="banner" ref={testInit}>
-            <Card
-
-                hoverable
-                style={{  background: data.Color }}
-                cover={<img src={data.imageURL} />}
-                onClick={() => window.location.href = data.redirectURL}
-            >
-
-
-
-
-
-                {/* <img alt="example" src={props.data.URL} style={{ width: 300 }} /> */}
-                <p className="card-text" >{data.cardText}</p>
-
-
-
-
-
-            </Card>
+        <div className="banner" ref={testInit}  style={{  background: data.BgColor}}
+          onClick={() => window.location.href = data.redirectURL}>
+           
+           
+           <Draggable bounds="parent" >
+        
+              
+                    <img draggable="false" style={{maxWidth: 500}} src={data.imageURL} alt="Banner Image"/> 
+                
+                </Draggable>
+            <Draggable bounds="parent">
+                    <p style={{width: 300, color:data.FontColor}}
+                    className="card-text" >
+                        {data.cardText}</p>
+                </Draggable>
         </div>
 
 

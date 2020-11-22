@@ -1,4 +1,4 @@
-import { IMAGEURL, CARDTEXT, REDIRECTIMAGE, SETCOLOR } from './types'
+import { IMAGEURL, CARDTEXT, REDIRECTIMAGE, SETBGCOLOR, SETFONTCOLOR } from './types'
 
 export const setImageURL = (ImageURL: string) => {
 
@@ -22,10 +22,17 @@ export const setCardText = (cardText: string) => {
         cardText
     }
 }
-export const setColor = (Color: string) => {
+export const setBgColor = (Color: string) => {
 
     return {
-        type: SETCOLOR,
+        type: SETBGCOLOR,
+        Color
+    }
+}
+export const setFontColor = (Color: string) => {
+
+    return {
+        type: SETFONTCOLOR,
         Color
     }
 }

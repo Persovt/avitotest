@@ -18,14 +18,18 @@ code {
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-decoration: none;
-  color: white
+  
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  cursor: move;
 }
 
 .main{
   display: flex;
  flex-direction: row;
  flex: 1 1 auto !important;
-
+ 
 }
 .editor{
   width: 50vw;
@@ -38,11 +42,19 @@ code {
 .banner{
   display: flex;
   height: 100vh;
-}
-.ant-card {
-  height: 100vh;
+  overflow: hidden;
+  border-radius: 15px ;
+  z-index: 0;
   width: 50vw;
+  position: relative;
 }
+
+.banner img{
+  cursor: move;
+  position: absolute;
+  object-fit: contain;
+}
+
 .error{
   color: red
 }

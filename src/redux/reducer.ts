@@ -1,4 +1,4 @@
-import { IMAGEURL, CARDTEXT, REDIRECTIMAGE, SETCOLOR } from './types'
+import { IMAGEURL, CARDTEXT, REDIRECTIMAGE, SETFONTCOLOR, SETBGCOLOR } from './types'
 
 
 export type initialStateType = {
@@ -7,7 +7,8 @@ export type initialStateType = {
     errorURLImage: string,
     errorURL: string,
     RedirectURL: string,
-    Color: string,
+    BgColor: string,
+    FontColor: string,
 }
 export type actionType = {
     ImageURL: string,
@@ -19,7 +20,8 @@ export type actionType = {
 }
 let initialState: initialStateType = {
     ImageURL: '',
-    Color: '',
+    BgColor: '',
+    FontColor: '',
     RedirectURL: '',
     cardText: '',
     errorURLImage: '',
@@ -32,11 +34,18 @@ function isURLImage(url: string) {
 function isValidURL(url: string) {
     return (url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g) !== null)
   };
+  
 export const reducer = (state = initialState, action: actionType): initialStateType => {
     switch (action.type) {
-        case SETCOLOR: 
+        case SETBGCOLOR: 
             return Object.assign({}, state,
-                { Color: action.Color
+                { BgColor: action.Color
+                   
+                }
+            )
+            case SETFONTCOLOR: 
+            return Object.assign({}, state,
+                { FontColor: action.Color
                    
                 }
             )

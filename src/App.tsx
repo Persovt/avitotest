@@ -28,10 +28,11 @@ export type propsType = {
 };
 
 class App extends React.Component<propsType> {
-  block: any; //Aaaa WTF
+  private block!: HTMLElement ; //Aaaa WTF
 
   constructor(props: propsType) {
     super(props);
+   
   }
 
   render() {
@@ -39,7 +40,7 @@ class App extends React.Component<propsType> {
       <div className="main">
         <Editor props={this.props} block={this.block} />
         <Banner
-          testInit={(e: Node) => {
+          testInit={(e: HTMLElement) => {
             this.block = e;
           }}
           data={this.props}
